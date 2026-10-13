@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned int n, char format)
+int	ft_print_hex(unsigned long n, char format)
 {
 	int		len;
 	char	*base;
@@ -32,8 +32,9 @@ int ft_print_ptr(void *ptr)
 	
 	len = 0;
 	if (!ptr)
-		return (ft_print_str(("nil"));
+		return (ft_print_str("(nil)"));
 	len += ft_print_str("0x");
-	len += ft_putptr_hex((unsigned long)ptr);
+	len += ft_print_hex((unsigned long)ptr, 'x');
 	return (len);
 }
+
