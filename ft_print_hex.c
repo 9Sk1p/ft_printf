@@ -26,3 +26,14 @@ int	ft_print_hex(unsigned int n, char format)
 	len += ft_print_char(base[n % 16]);
 	return (len);
 }
+int ft_print_ptr(void *ptr)
+{
+	int len;
+	
+	len = 0;
+	if (!ptr)
+		return (ft_print_str(("nil"));
+	len += ft_print_str("0x");
+	len += ft_putptr_hex((unsigned long)ptr);
+	return (len);
+}
