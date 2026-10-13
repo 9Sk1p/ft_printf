@@ -26,8 +26,8 @@ int	ft_print_str(char *s)
 		return (write(1, "(null)", 6));
 	while (s[i])
 	{
-		ft_putchar_fd(s, 1);
+		ft_putchar_fd(s[i], 1);
 		i++;
 	}
-	return (ft_strlen(s));
+	return (i);
 }
