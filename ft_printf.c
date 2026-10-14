@@ -45,8 +45,13 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			count += ft_check_type(format[i + 1], args);
-			i += 2;
+			if (format[i + 1])
+			{
+				count += ft_check_type(format[i + 1], args);
+				i += 2;
+			}
+			else
+				i++;
 		}
 		else
 		{

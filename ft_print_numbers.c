@@ -15,21 +15,18 @@
 int	ft_print_nbr(int n)
 {
 	int	len;
+	long	num;
 
 	len = 0;
-	if (n == -2147483648)
-	{
-		ft_print_str("-2147483648");
-		return (11);
-	}
-	if (n < 0)
+	num = n;
+	if (num < 0)
 	{
 		len += ft_print_char('-');
-		n = -n;
+		num = -num;
 	}
-	if (n >= 10)
-		len += ft_print_nbr(n / 10);
-	len += ft_print_char((n % 10) + '0');
+	if (num >= 10)
+		len += ft_print_nbr(num / 10);
+	len += ft_print_char((num % 10) + '0');
 	return (len);
 }
 int	ft_print_unsigned(unsigned int n)
