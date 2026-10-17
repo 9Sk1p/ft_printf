@@ -25,7 +25,7 @@ static int	ft_check_type(char c, va_list args)
 	else if (c == 'u')
 		return (ft_print_unsigned(va_arg(args, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		return (ft_print_hex(va_arg(args, unsigned int), c));
+		return (ft_print_hex((unsigned long)va_arg(args, unsigned int), c));
 	else if (c == '%')
 		return (ft_print_char('%'));
 	return (0);
