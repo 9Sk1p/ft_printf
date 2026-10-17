@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_chars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yhubaren <yhubaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 13:29:44 by marvin            #+#    #+#             */
-/*   Updated: 2026/10/13 13:29:44 by marvin           ###   ########.fr       */
+/*   Created: 2026/10/17 12:47:31 by yhubaren          #+#    #+#             */
+/*   Updated: 2026/10/17 12:47:31 by yhubaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_print_char(char c)
 	ft_putchar_fd(c, 1);
 	return (1);
 }
+
 int	ft_print_str(char *s)
 {
 	int	i;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yhubaren <yhubaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/13 13:40:58 by marvin            #+#    #+#             */
-/*   Updated: 2026/10/13 13:40:58 by marvin           ###   ########.fr       */
+/*   Created: 2026/10/17 12:47:45 by yhubaren          #+#    #+#             */
+/*   Updated: 2026/10/17 12:47:45 by yhubaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_print_nbr(int n)
 {
-	int	len;
+	int		len;
 	long	num;
 
 	len = 0;
@@ -29,6 +29,7 @@ int	ft_print_nbr(int n)
 	len += ft_print_char((num % 10) + '0');
 	return (len);
 }
+
 int	ft_print_unsigned(unsigned int n)
 {
 	int	len;

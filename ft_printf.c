@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yhubaren <yhubaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/10 14:44:17 by marvin            #+#    #+#             */
-/*   Updated: 2026/10/10 14:44:17 by marvin           ###   ########.fr       */
+/*   Created: 2026/10/17 12:47:53 by yhubaren          #+#    #+#             */
+/*   Updated: 2026/10/17 12:47:53 by yhubaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,23 @@ static int	ft_check_type(char c, va_list args)
 		return (ft_print_char('%'));
 	return (0);
 }
+
+static int	ft_handle_percent(const char *format, va_list args, int *i)
+{
+	if (!format[*i + 1])
+	{
+		(*i)++;
+		return (0);
+	}
+	*i += 2;
+	return (ft_check_type(format[*i - 1], args));
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int	i;
-	int	count;
+	int		i;
+	int		count;
 
 	if (!format)
 		return (-1);
@@ -44,21 +56,9 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%')
-		{
-			if (format[i + 1])
-			{
-				count += ft_check_type(format[i + 1], args);
-				i += 2;
-			}
-			else
-				i++;
-		}
+			count += ft_handle_percent(format, args, &i);
 		else
-		{
-			ft_putchar_fd(format[i], 1);
-			count++;
-			i++;
-		}
+			count += ft_print_char(format[i++]);
 	}
 	va_end(args);
 	return (count);
