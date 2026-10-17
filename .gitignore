@@ -1,0 +1,10 @@
+*.o
+*.a
+a.out
+*.out
+*.dSYM/
+*.gch
+.vscode/
+.idea/
+*.swp
+.DS_Store
